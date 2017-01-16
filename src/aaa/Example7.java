@@ -1,10 +1,8 @@
 package aaa;
 
-import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -37,6 +35,10 @@ public class Example7 {
 			
 			Map<String, Double> result4 = listOfDataFile.stream().collect(Collectors.groupingBy(DataFile::getGroup,Collectors.summingDouble(DataFile::getValue)));
 			System.out.println(result4);
+			
+			Double result5 = listOfDataFile.stream().collect(Collectors.summingDouble(DataFile::getValue));
+			System.out.println(result5);
+			
 			
 		} catch (Exception e) {
 		}

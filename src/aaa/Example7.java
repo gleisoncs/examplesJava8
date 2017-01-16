@@ -3,6 +3,7 @@ package aaa;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -39,6 +40,9 @@ public class Example7 {
 			Double result5 = listOfDataFile.stream().collect(Collectors.summingDouble(DataFile::getValue));
 			System.out.println(result5);
 			
+			System.out.println(listOfDataFile);
+			listOfDataFile.sort(Comparator.comparing(DataFile::getName));
+			System.out.println(listOfDataFile);
 			
 		} catch (Exception e) {
 		}
